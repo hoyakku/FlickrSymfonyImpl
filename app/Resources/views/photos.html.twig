@@ -1,0 +1,13 @@
+{% block body %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/framework/css/photos.css') }}" rel="stylesheet" />
+{% endblock %}
+<ul>
+    {% for photourl in photourls %}
+        <li>
+            <img src="{{ photourl.url }}">
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

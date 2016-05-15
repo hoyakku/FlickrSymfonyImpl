@@ -1,0 +1,10 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+  custom.flickr_api.user_id: 141843760@N07
+  custom.flickr_api.api_key: 5d1dac2f4c1e419d6b971d4ddf2ae5ff
+
+services:
+  custom.flickr.api:
+    class: AppBundle\Service\CustomFlickrApi
+    arguments: ["@flickr_api.curl", "%flickr_api.url%", "%custom.flickr_api.user_id%", "%custom.flickr_api.api_key%"]
